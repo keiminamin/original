@@ -1,0 +1,44 @@
+<% if session[:user]%>
+<a href="/<%= current_user.id %>/new">友達登録</a>
+<table>
+<thead>
+　<tr>
+  <th>友達</th>
+　<th>誕生日</th>
+　<th>もらった?</th>
+　<th>プレゼント</th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <td></td>
+  <td></td>
+</tr>
+</tbody>
+  <% @friends.each do |friend| %>
+    <td><%= friend.friend_name %></td>
+    <td><%= friend.friend_birthday%></td>
+    <td>
+      <div style="
+  <% if friend.given %>
+    background-color:red;
+  <% else %>
+    background-color:white;
+
+  <% end %>
+
+  border: 1px solid black;
+  width :10px;
+  heitht :10px;
+  display:block;
+
+  "></div>
+    </td>
+
+    <td><%= friend.present %></td>
+
+
+
+  <% end %>
+</table>
+<% end %>

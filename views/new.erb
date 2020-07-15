@@ -1,0 +1,23 @@
+<form action="/friends" method="post">
+  <input type="text" placeholder="お友達の名前">
+  <input type="text" placeholder="お友達の誕生日">
+
+<% if @friend %>
+  <a href="/friends/<%@friend.id %>/given" style="
+  <% if @friend.given %>
+    background-color:red;
+  <% else %>
+    background-color:white;
+
+  <% end %>
+
+  border: 1px solid black;
+  width :10px;
+  heitht :10px;
+  display:block;
+
+  "></a>
+  <input type="text" placeholder="プレゼント">
+  <input type="submit" value="送信">
+</form>
+<% end %>
