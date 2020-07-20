@@ -60,28 +60,27 @@ get '/signout' do
 end
 
 
-post '/friends' do
+post '/:id/new' do
   date = params[:friend_birthday].split('-')
   if Date.valid_date?(date[0].to_i,date[1].to_i,date[2].to_i)
   current_user.friends.create(friend_name: params[:friend_name],present: params[:present],my_birthday: Date.parse(params[:my_birthday]))
 
   else
-  redirect '/friends/:id/new'
+  redirect '/:id/new'
   end
 end
+
+get '/:id/new' do
+  @friend = Friend.find(params[:id])
+  erb :new
+end
+
 
 get '/:id/new/given' do
   friend = Friend.find(params[:id])
   friend.given = !frind.given
   friend.save
-  redirect '/'
+  redirect '/:id/new'
 
 
-end
-
-get '/:id/new' do
-  if Friend.where(params[:id])
-  @friend = Friend.where(params[:id])
-  end
-  erb :new
 end
