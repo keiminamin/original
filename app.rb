@@ -9,7 +9,11 @@ helpers do
     User.find_by(id: session[:user])
   end
 end
-
+before '/friends' do
+  if current_user.nil?
+    redirect '/'
+  end
+end
 get '/' do
 
 
@@ -60,27 +64,22 @@ get '/signout' do
 end
 
 
-post '/:id/new' do
-  date = params[:friend_birthday].split('-')
-  if Date.valid_date?(date[0].to_i,date[1].to_i,date[2].to_i)
-  current_user.friends.create(friend_name: params[:friend_name],present: params[:present],my_birthday: Date.parse(params[:my_birthday]))
-
-  else
-  redirect '/:id/new'
-  end
+post '/friends' do
+  current_user.friends.create(friend_birthday: params[:friend_birthday],friend_name: params[:friend_name],present: params[:present])
+  redirect '/'
 end
 
-get '/:id/new' do
-  @friend = Friend.find(params[:id])
+get '/new' do
+
   erb :new
 end
 
 
-get '/:id/new/given' do
+get '/new/given' do
   friend = Friend.find(params[:id])
   friend.given = !frind.given
   friend.save
-  redirect '/:id/new'
+  redirect '/new'
 
 
 end

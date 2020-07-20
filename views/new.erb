@@ -1,9 +1,9 @@
-<form action="/<%= current_user.id %>/new" method="post">
-  <input type="text" placeholder="お友達の名前">
-  <input type="text" placeholder="お友達の誕生日">
+<form action="/friends" method="post">
+  <input type="text" name= "friend_name" placeholder="お友達の名前"><br>
+  <input type="text" name="friend_birthday" placeholder="お友達の誕生日">
 
 
-  <a href="/<%= current_user.id %>/new/given" style="
+  <a href="/new/given" style="
   <% if @friend.given %>
     background-color:red;
   <% else %>
@@ -17,7 +17,7 @@
   display:block;
 
   "></a>
-  <input type="text" placeholder="プレゼント">
+  <input type="text" name="present" placeholder="プレゼント">
   <input type="submit" value="送信">
 
 
