@@ -65,21 +65,11 @@ end
 
 
 post '/friends' do
-  current_user.friends.create(friend_birthday: params[:friend_birthday],friend_name: params[:friend_name],present: params[:present])
+  current_user.friends.create(friend_birthday: params[:friend_birthday],friend_name: params[:friend_name],present: params[:present],given: params[:given])
   redirect '/'
 end
 
 get '/new' do
 
   erb :new
-end
-
-
-get '/new/given' do
-  friend = Friend.find(params[:id])
-  friend.given = !frind.given
-  friend.save
-  redirect '/new'
-
-
 end

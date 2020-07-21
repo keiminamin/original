@@ -7,19 +7,16 @@
 　<th>誕生日</th>
 　<th>もらった?</th>
 　<th>プレゼント</th>
+  <th>あと何日?</th>
   </tr>
 </thead>
-<tbody>
-<tr>
-  <td></td>
-  <td></td>
-</tr>
-</tbody>
+
   <% @friends.each do |friend| %>
+  <tr>
     <td><%= friend.friend_name %></td>
     <td><%= friend.friend_birthday%></td>
     <td>
-      <div style="
+  <div style="
   <% if friend.given %>
     background-color:red;
   <% else %>
@@ -28,8 +25,9 @@
   <% end %>
 
   border: 1px solid black;
+  border-radius :100px;
   width :10px;
-  heitht :10px;
+  height :10px;
   display:block;
 
   "></div>
@@ -37,7 +35,8 @@
 
     <td><%= friend.present %></td>
 
-
+    <td><%= friend.friend_days %></td>
+  </tr>
 
   <% end %>
 </table>

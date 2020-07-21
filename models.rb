@@ -11,13 +11,20 @@ has_secure_password
     has_many :friends
 
       def remained_days
-        return( my_birthday - Date.today).to_i
+        return( my_birthday.yday - Date.today.yday).to_i
       end
+
+
   end
 
   class Friend < ActiveRecord::Base
 
     belongs_to :user
 
+
+    def friend_days
+        return (friend_birthday.yday - Date.today.yday).to_i
+
+      end
 
   end
