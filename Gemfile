@@ -15,10 +15,17 @@ gem 'activerecord','5.2.3'
 gem 'rake'
 gem 'bcrypt'
 gem 'line-bot-api'
-group :development  do
+# group :development  do
 
-gem 'sqlite3','1.4.1'
+# gem 'sqlite3','1.4.1'
+# end
+# group :production  do
+# gem 'pg','0.21.0'
+# end
+
+group :development do
+  gem 'sqlite3', '~> 1.3.6'
 end
-group :production  do
-gem 'pg','0.21.0'
+group :production do
+  gem 'pg', '~> 0.18'
 end
