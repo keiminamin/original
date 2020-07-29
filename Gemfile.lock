@@ -23,6 +23,7 @@ GEM
     fastri (0.3.1.1)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
+    line-bot-api (1.14.1)
     minitest (5.14.1)
     multi_json (1.14.1)
     mustermann (1.1.1)
@@ -83,6 +84,7 @@ DEPENDENCIES
   bcrypt
   debase
   fastri
+  line-bot-api
   rake
   rcodetools
   rubocop

@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+
+    background-color: #EDCD82;
+
+}
+
+a {
+
+    text-decoration: none;
+    color: #503D3F;
+    margin: 30px;
+    transition: 0.3s;
+}
+
+a:hover {
+
+    border-bottom: solid 2px #3D0814;
+
+}
+
+.cake {
+    width: 50vw;
+    height: 100vh;
+
+
+}
+
+.image {
+    float: left;
+    overflow: hidden;
+
+}
+
+.script {
+    width: 50vw;
+    height: 100vh;
+    float: left;
+
+
+}
+
+.title {
+    font-size: 70px;
+    color: #3D0814;
+    font-family: 'Yanone Kaffeesatz',
+        sans-serif;
+}
+
+.titles {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 35vh;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+
+
+}
+
+.login {
+
+    background-color: #EDCF82;
+}
+
+.theme {
+
+    color: #EDCF82;
+    background: #FEEAFA;
+
+
+}
+
+
+
+th {
+
+    padding: 10px;
+    width: 100vw;
+
+}
+
+td {
+
+    padding: 10px;
+    text-align: center;
+    color: #3D0814;
+    background-color: #FEEAFA;
+
+
+}
+
+tr {
+    background: #FEEAFA;
+}
+
+.log_title {
+    color: #FEEAFA;
+    font-family: 'M PLUS Rounded 1c',
+        sans-serif;
+
+    margin-left: 70vw;
+    font-size: 30px;
+}
+
+.log_link {
+    font-family: 'M PLUS Rounded 1c',
+        sans-serif;
+    color: #FEEAFA;
+}
+
+.log_links {
+    margin-top: 5vh;
+    margin-left: 68vw;
+}
+
+.web_title {
+
+    float: left;
+    font-family: 'Yanone Kaffeesatz',
+        sans-serif;
+    margin-left: 3vw;
+    margin-top: 1vh;
+    font-size: 30px;
+}
+
+.form_title {
+
+    font-size: 60px;
+    color: #3D0814;
+    font-family: 'Yanone Kaffeesatz',
+        sans-serif;
+
+    margin: 30px;
+}
+
+#bt {
+    margin-left: 82vw;
+
+}
+
+#bt2 {
+
+    margin-left: 82vw;
+    margin-top: 5vh;
+
+}
+
+.radio {
+    margin-left: 7vw;
+    margin-bottom: 5vh;
+}

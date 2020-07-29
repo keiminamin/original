@@ -10,7 +10,11 @@ has_secure_password
     length: {in: 5..10}
     has_many :friends
 
+    validates :my_birthday,
+    presence: true
+
       def remained_days
+
         return( my_birthday.yday - Date.today.yday).to_i
       end
 
@@ -18,13 +22,25 @@ has_secure_password
   end
 
   class Friend < ActiveRecord::Base
+    validates :friend_birthday,
+    presence: true
+    validates :friend_name,
+    presence: true
+    validates :present,
+    presence: true
 
     belongs_to :user
 
 
     def friend_days
-        return (friend_birthday.yday - Date.today.yday).to_i
+        if friend_birthday.yday > Date.today.yday
 
-      end
+
+      return (friend_birthday.yday - Date.today.yday).to_i
+        else
+      return (friend_birthday.yday - Date.today.yday+365).to_i
+        end
+
+    end
 
   end

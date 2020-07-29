@@ -1,7 +1,26 @@
+
 <% if session[:user]%>
-<a href="/new">友達登録</a>
+
+<div class="login">
+
+  <div>
+  <h2 class="web_title">Everyday is Birthday</h2>
+<% if current_user.remained_days == -1 %>
+
+  <h2 class="log_title">Happy Birthday<%= User.find(session[:user]).mail%>さん</h2>
+  <a href="/delete">友達更新</a>
+  <% else %>
+  <h2 class="log_title">ようこそ<%= User.find(session[:user]).mail%>さん</h2>
+
+  <% end %>
+  </div>
+  <div class="log_links">
+  <a class=log_link  href="/new">友達登録</a>
+<a class=log_link href="/signout">サインアウト</a>
+</div>
 <table>
-<thead>
+<thead class="theme">
+<div class="ths">
 　<tr>
   <th>友達</th>
 　<th>誕生日</th>
@@ -9,25 +28,26 @@
 　<th>プレゼント</th>
   <th>あと何日?</th>
   </tr>
+  </div>
 </thead>
 
   <% @friends.each do |friend| %>
-  <tr>
+
     <td><%= friend.friend_name %></td>
     <td><%= friend.friend_birthday%></td>
     <td>
   <div style="
   <% if friend.given %>
-    background-color:red;
+    background-color:#EB5E55;
   <% else %>
-    background-color:white;
+    background-color:#FEEAFA;
 
   <% end %>
 
-  border: 1px solid black;
+  margin: 0 auto;
   border-radius :100px;
-  width :10px;
-  height :10px;
+  width :15px;
+  height :15px;
   display:block;
 
   "></div>
@@ -40,4 +60,20 @@
 
   <% end %>
 </table>
+
+<% else %>
+
+  <div class="script">
+  <div class="titles">
+  <h2 class="title">Everyday is Birthday</h2>
+  </div>
+  <div class=links>
+  <a class="link" href="/signin">Signin!</a> <a class="link" href="/signup">Signup!</a><br>
+  </div>
+  </div>
+<div class=image>
+  <img class="cake" src="/image/cake.png" >
+  </div>
+
+</div>
 <% end %>
