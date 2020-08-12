@@ -106,9 +106,7 @@ post '/callback' do
   end
 
   events = client.parse_events_from(body)
-  if my_birthday == 0
-    response = "誕生日、おめでとうございます!"
-  end
+
   events.each { |event|
 
 
