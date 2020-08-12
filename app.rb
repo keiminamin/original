@@ -106,7 +106,13 @@ post '/callback' do
   end
 
   events = client.parse_events_from(body)
+  if my_birthday == 0
+    response = "誕生日、おめでとうございます!"
+  end
   events.each { |event|
+
+
+    if
     case event
     when Line::Bot::Event::Message
       case event.type
@@ -122,6 +128,8 @@ post '/callback' do
         tf.write(response.body)
       end
     end
+
+
   }
 
   "OK"
