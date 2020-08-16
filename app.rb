@@ -138,11 +138,12 @@ post '/callback' do
 end
 
 get '/:userid/confirm' do
-  @user = User.find(params[:userid])
+  user = User.find(params[:userid])
   erb :confirm
 end
 
 post '/:userid/confirm' do
+  user = User.find(params[:userid])
   events = client.parse_events_from(body)
   user = User.find_by(mail:params[:mail])
 
