@@ -108,23 +108,17 @@ post '/callback' do
   events = client.parse_events_from(body)
   events.each { |event|
     case event
-    when Line::Bot::Event::Message
-      case event.type
-      when Line::Bot::Event::MessageType::Text
-        message = {
-          type: 'text',
-          text: event.message['text']
-        }
-        client.reply_message(event['replyToken'], message)
-      when Line::Bot::Event::MessageType::Image, Line::Bot::Event::MessageType::Video
-        response = client.get_message_content(event.message['id'])
-        tf = Tempfile.open("content")
-        tf.write(response.body)
-      end
+    when Line::Bot::Event::Follow #フォローイベント
+      userid = event['source']['userId']  #userId取得
+      user = User.new
+      user.UserId = userid
+      user.save
+      message = { type: 'text', text: '登録しました' }
+      client.push_message(user.userId, message) #push送信
+    when Line::Bot::Event::Unfollow #フォロー解除(ブロック)
+      userid = event['source']['userId']
+      user = User.find_by(userId: userid)
+      user.destroy
     end
-
-
   }
-
-  "OK"
 end
