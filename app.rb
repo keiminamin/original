@@ -109,16 +109,47 @@ post '/callback' do
   events.each { |event|
     case event
     when Line::Bot::Event::Follow #フォローイベント
-      userid = event['source']['userId']  #userId取得
-      user = User.new
-      user.UserId = userid
-      user.save
+
       message = { type: 'text', text: '登録しました' }
-      client.push_message(user.userId, message) #push送信
+      client.push_message(current_user.userId, message) #push送信
+
     when Line::Bot::Event::Unfollow #フォロー解除(ブロック)
       userid = event['source']['userId']
       user = User.find_by(userId: userid)
       user.destroy
     end
+
+
+    when current_user.remained_days == -1
+        message = { type: 'text', text: '誕生日おめでとうございます'}
+        client.push_message(message)
+    end
+
+    friend = current_user.friends
+
+  when friend.friend_days == -1
+      message = { type:'text', text:"#{friend.friend_birthday.month}月#{friend.friend_birthday.day}日。"text: "#{friend.name}さんの誕生日です。"}
+
+  end
+
+
   }
+end
+
+get '/confirm' do
+  erb :confirm
+end
+
+post '/confirm' do
+  user = User.find_by(mail:params[:mail])
+    if user && user.authenticate(params[:password])
+
+    userid = event['source']['userId']  #userId取得
+      user = User.new
+      user.UserId = userid
+      user.save
+    end
+
+  redirect '/callback'
+
 end
