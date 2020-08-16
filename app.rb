@@ -120,17 +120,17 @@ post '/callback' do
     end
 
 
-    if @user.remained_days == -1
-        message = { type: 'text', text: '誕生日おめでとうございます'}
-        client.push_message(message)
-    end
+  #   if current_user.remained_days == -1
+  #       message = { type: 'text', text: '誕生日おめでとうございます'}
+  #       client.push_message(message)
+  #   end
 
-    friend = current_user.friends
+  #   friend = current_user.friends
 
-  if @friend.friend_days == -1
-      message = { type:'text', text:"#{friend.friend_birthday.month}月#{friend.friend_birthday.day}日。"text: "#{friend.name}さんの誕生日です。"}
+  # if current_user.friend_days == -1
+  #     message = { type:'text', text:"#{friend.friend_birthday.month}月#{friend.friend_birthday.day}日。"text: "#{friend.name}さんの誕生日です。"}
 
-  end
+  # end
 
 
   }
@@ -146,7 +146,7 @@ post '/confirm' do
 
     if user && user.authenticate(params[:password])
 
-    userid = event['source']['userId']  #userId取得
+
       user = User.new
       user.UserId = userid
       user.save
