@@ -109,8 +109,8 @@ post '/callback' do
   events.each { |event|
     case event
     when Line::Bot::Event::Follow #フォローイベント
-
-      message = { type: 'text', text: "https://salty-ridge-27900.herokuapp.com/#{user.userId}/confirm" }
+      userid = event['source']['userId']
+      message = { type: 'text', text: "https://salty-ridge-27900.herokuapp.com/#{userid}/confirm" }
       client.push_message(user.userId, message) #push送信
 
     when Line::Bot::Event::Unfollow #フォロー解除(ブロック)
@@ -152,6 +152,6 @@ post '/confirm' do
       user.save
     end
 
-  puts "完了しました."
+  puts "完了しました。"
 
 end
