@@ -110,8 +110,9 @@ post '/callback' do
     case event
     when Line::Bot::Event::Follow #フォローイベント
       userid = event['source']['userId']
+
       message = { type: 'text', text: "https://salty-ridge-27900.herokuapp.com/#{userid}/confirm" }
-      client.push_message(@user.userId, message) #push送信
+      client.push_message(userid, message) #push送信
 
     when Line::Bot::Event::Unfollow #フォロー解除(ブロック)
       userid = event['source']['userId']
@@ -147,7 +148,7 @@ post '/confirm' do
     if user && user.authenticate(params[:password])
 
 
-      user = User.new
+
       user.userId = userid
       user.save
     end
