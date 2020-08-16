@@ -110,8 +110,8 @@ post '/callback' do
     case event
     when Line::Bot::Event::Follow #フォローイベント
 
-      message = { type: 'text', text: 'https://salty-ridge-27900.herokuapp.com/confirm' }
-      client.push_message(current_user.userId, message) #push送信
+      message = { type: 'text', text: "https://salty-ridge-27900.herokuapp.com/#{user.userId}/confirm" }
+      client.push_message(user.userId, message) #push送信
 
     when Line::Bot::Event::Unfollow #フォロー解除(ブロック)
       userid = event['source']['userId']
@@ -120,14 +120,14 @@ post '/callback' do
     end
 
 
-    when current_user.remained_days == -1
+    if @user.remained_days == -1
         message = { type: 'text', text: '誕生日おめでとうございます'}
         client.push_message(message)
     end
 
     friend = current_user.friends
 
-  when friend.friend_days == -1
+  if @friend.friend_days == -1
       message = { type:'text', text:"#{friend.friend_birthday.month}月#{friend.friend_birthday.day}日。"text: "#{friend.name}さんの誕生日です。"}
 
   end
@@ -152,6 +152,6 @@ post '/confirm' do
       user.save
     end
 
-  redirect '/callback'
+  puts "完了しました."
 
 end
