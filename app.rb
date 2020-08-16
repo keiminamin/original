@@ -141,7 +141,9 @@ get '/confirm' do
 end
 
 post '/confirm' do
+  events = client.parse_events_from(body)
   user = User.find_by(mail:params[:mail])
+
     if user && user.authenticate(params[:password])
 
     userid = event['source']['userId']  #userId取得
