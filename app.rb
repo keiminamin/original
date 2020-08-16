@@ -148,7 +148,7 @@ post '/confirm' do
 
 
       user = User.new
-      user.UserId = userid
+      user.userId = userid
       user.save
     end
 
