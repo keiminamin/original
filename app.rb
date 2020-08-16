@@ -111,7 +111,7 @@ post '/callback' do
     when Line::Bot::Event::Follow #フォローイベント
       userid = event['source']['userId']
       message = { type: 'text', text: "https://salty-ridge-27900.herokuapp.com/#{userid}/confirm" }
-      client.push_message(user.userId, message) #push送信
+      client.push_message(@user.userId, message) #push送信
 
     when Line::Bot::Event::Unfollow #フォロー解除(ブロック)
       userid = event['source']['userId']
