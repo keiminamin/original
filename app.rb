@@ -122,15 +122,16 @@ post '/callback' do
 
 
   #   if current_user.remained_days == -1
-  #       message = { type: 'text', text: '誕生日おめでとうございます'}
-  #       client.push_message(message)
+  #       message = { type: 'text', text: '誕生日おめでとうございます' }
+  #       client.push_message(userid, message)
   #   end
 
   #   friend = current_user.friends
 
   # if current_user.friend_days == -1
   #     message = { type:'text', text:"#{friend.friend_birthday.month}月#{friend.friend_birthday.day}日。"text: "#{friend.name}さんの誕生日です。"}
-
+  #     client.push_message(userid, message)
+  #   end
   # end
 
 
