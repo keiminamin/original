@@ -8,7 +8,7 @@
 <% if current_user.remained_days == -1 %>
 
   <h2 class="log_title">Happy Birthday<%= User.find(session[:user]).mail%>さん</h2>
-  <a href="/delete">友達更新</a>
+  <a class="reload" href="/delete">友達更新</a>
   <% else %>
   <h2 class="log_title">ようこそ<%= User.find(session[:user]).mail%>さん</h2>
 
