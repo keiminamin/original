@@ -161,7 +161,11 @@ tr {
 }
 
 .reload {
-    color: #fafafa;
-    margin-top: 5vh;
-    margin-left: 68vw;
+
+
+    margin-top: 7vh;
+    margin-left: 80vw;
+    font-family: 'M PLUS Rounded 1c',
+        sans-serif;
+    color: #FEEAFA;
 }
