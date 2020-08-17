@@ -156,7 +156,7 @@ post '/:userid/confirm' do
     if user && user.authenticate(params[:password])
 
 
-      userid = event['source']['userId']
+
       user.userId = userid
       user.save
     end
