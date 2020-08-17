@@ -111,7 +111,8 @@ post '/callback' do
     when Line::Bot::Event::Follow #フォローイベント
       userid = event['source']['userId']
 
-      message = { type: 'text', text: "https://salty-ridge-27900.herokuapp.com/#{userid}/confirm  こちらから認証してください" }
+      message = { type: 'text', text: "https://salty-ridge-27900.herokuapp.com/#{userid}/confirm
+      こちらから認証してください" }
 
       client.push_message(userid, message) #push送信
 
@@ -145,14 +146,17 @@ get '/:userid/confirm' do
 end
 
 post '/:userid/confirm' do
-  user = params[:userid]
-  events = client.parse_events_from(body)
-  user = User.find_by(mail:params[:mail])
+
+
+  def user
+    params[:userid]
+    User.find_by(mail:params[:mail])
+  end
 
     if user && user.authenticate(params[:password])
 
 
-
+      userid = event['source']['userId']
       user.userId = userid
       user.save
     end
