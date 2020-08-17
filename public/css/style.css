@@ -163,8 +163,10 @@ tr {
 .reload {
 
 
-    margin-top: 7vh;
-    margin-left: 80vw;
+    position: absolute;
+    top: 20vh;
+    right: 2vw;
+
     font-family: 'M PLUS Rounded 1c',
         sans-serif;
     color: #FEEAFA;
