@@ -1,28 +1,15 @@
-require 'bundler/setup'
-Bundler.require
-require 'sinatra/reloader' if development?
-require './models'
-require 'line/bot'
-
-require 'line/bot'
-enable :sessions
-
-
-
-helpers do
-  def current_user
-    User.find_by(id: session[:user])
-  end
-
-  def client
-  @client ||= Line::Bot::Client.new { |config|
-    config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
-    config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
-  }
-  end
+desc "This task is called by the Heroku scheduler add-on"
+task :update_feed => :environment do
+  puts "Updating feed..."
+  NewsFeed.update
+  puts "done."
 end
 
-post '/callback' do
+task :send_reminders => :environment do
+  User.send_reminders
+end
+
+task :'/callback' do
   body = request.body.read
 
   signature = request.env['HTTP_X_LINE_SIGNATURE']
@@ -47,9 +34,3 @@ post '/callback' do
     end
 
   end
-
-
-
-
-  }
-end
