@@ -20,6 +20,7 @@ task :'/callback' do
   events = client.parse_events_from(body)
   events.each { |event|
     case event
+      userid = event['source']['userId']
     when current_user.remained_days == -1
         message = { type: 'text', text: '誕生日おめでとうございます' }
         client.push_message(userid, message)
