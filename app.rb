@@ -157,7 +157,8 @@ post '/:userid/confirm' do
 
 
 
-      user.userId = userid
+
+      userid = user.userId
       user.save
 
       puts "完了しました。"
