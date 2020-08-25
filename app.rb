@@ -160,7 +160,7 @@ post '/:userid/confirm' do
 
 
     current_user.create(userid:params[:userId])
-      user.save
+      current_user.save
 
     redirect '/'
     else
