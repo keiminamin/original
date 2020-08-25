@@ -161,7 +161,6 @@ post '/:userid/confirm' do
       userid = user.userId
       user.save
 
-      puts "完了しました。"
 
     else
       redirect"/#{userid}/confirm "
