@@ -158,7 +158,8 @@ post '/:userid/confirm' do
 
 
 
-      userid = user.userId
+
+    current_user.create(userid:params[:userId])
       user.save
 
     redirect '/'
