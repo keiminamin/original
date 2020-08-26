@@ -142,7 +142,7 @@ end
 
 get '/:userid/confirm' do
   user = params[:userid]
-  @userid = params[:userid]
+  @userid = event['source']['userId']
   erb :confirm
 end
 
