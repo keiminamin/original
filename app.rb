@@ -149,21 +149,16 @@ end
 post '/:userid/confirm' do
 
 
-  def user
-    params[:userid]
-    User.find_by(mail:params[:mail])
-  end
 
 
+  user = User.find_by(mail:params[:mail])
 
     if user && user.authenticate(params[:password])
+    userid = params[:userid]
+    user.userId = userid
 
+    user.save
 
-
-
-
-    current_user.create(userid:params[:userId])
-      current_user.save
 
     redirect '/'
     else
