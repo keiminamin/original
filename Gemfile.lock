@@ -20,6 +20,7 @@ GEM
     debase (0.2.4.1)
       debase-ruby_core_source (>= 0.10.2)
     debase-ruby_core_source (0.10.9)
+    dotenv (2.7.6)
     fastri (0.3.1.1)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
@@ -84,6 +85,7 @@ DEPENDENCIES
   activerecord (= 5.2.3)
   bcrypt
   debase
+  dotenv
   fastri
   line-bot-api
   pg (~> 0.18)
