@@ -142,6 +142,7 @@ end
 
 get '/:userid/confirm' do
   user = params[:userid]
+  @userid = params[:userid]
   erb :confirm
 end
 
@@ -152,6 +153,8 @@ post '/:userid/confirm' do
     params[:userid]
     User.find_by(mail:params[:mail])
   end
+
+
 
     if user && user.authenticate(params[:password])
 
