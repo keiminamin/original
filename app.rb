@@ -159,7 +159,7 @@ post '/:userid/confirm' do
 
     user.save
 
-
+    puts "認証完了"
     # redirect '/'
     # else
     #   redirect"/#{userid}/confirm "
