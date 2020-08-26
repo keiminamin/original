@@ -160,9 +160,9 @@ post '/:userid/confirm' do
     user.save
 
 
-    redirect '/'
-    else
-      redirect"/#{userid}/confirm "
+    # redirect '/'
+    # else
+    #   redirect"/#{userid}/confirm "
     end
 
 
