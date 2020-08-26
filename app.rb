@@ -156,10 +156,19 @@ post '/:userid/confirm' do
     if user && user.authenticate(params[:password])
     userid = params[:userid]
     user.userId = userid
+    user.mail     = params[:mail]
+    user.password = params[:password]
 
     user.save
+    # if user.save!
+    #   puts "できたー"
+    # else
+    #   puts "あああ"
+    # end
 
-    puts "認証完了"
+
+
+    puts '認証完了'
     # redirect '/'
     # else
     #   redirect"/#{userid}/confirm "

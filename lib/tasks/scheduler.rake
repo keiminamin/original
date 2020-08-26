@@ -48,9 +48,6 @@ task :birthday do
     error 400 do 'Bad Request' end
   end
 
-
-
-
   userid = User.find(userId: params[:userId])
   message = { type: 'text', text: "おはよう" }
 
