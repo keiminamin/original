@@ -1,7 +1,6 @@
 require './models'
 require 'line/bot'
 require 'dotenv'
-enable :sessions
 
 def client
   @client ||= Line::Bot::Client.new { |config|
@@ -19,7 +18,7 @@ def client
 
   # userid = "U7852d2b3ee71aa7c8d18a5c39ef885b2"
   users = User.all
-    users.each |user| do
+    users.each  do　|user|
 
     if user.remained_days = -1
       userid = user.userId
@@ -30,9 +29,9 @@ def client
 
     friends = Friend.all
 
-    friends.each |friend| do
+    friends.each  do　|friend|
 
-      if friend.friend_days = -1
+      if user.friend.friend_days = -1
         userid = user.userId
         message = { type: 'text', text: "#{friend.name}さんの誕生日です。お祝いしましょう！" }
 
@@ -43,4 +42,4 @@ def client
 
 
 
-    end
+  end
