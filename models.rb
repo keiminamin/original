@@ -42,6 +42,7 @@ has_secure_password
 
 
       return (friend_birthday.yday - Date.today.yday).to_i
+
         else
       return (friend_birthday.yday - Date.today.yday+365).to_i
         end

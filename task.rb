@@ -18,23 +18,23 @@ def client
 
   # userid = "U7852d2b3ee71aa7c8d18a5c39ef885b2"
   users = User.all
-    users.each  do　|user|
-
-    if user.remained_days = -1
+    users.each  do |user|
       userid = user.userId
-　　　 message = { type: 'text', text: "お誕生日おめでとうございます！友達更新が可能です。" }
+    if user.remained_days == -1
+
+  message = { type: 'text', text: "お誕生日おめでとうございます！友達更新が可能です。" }
 
       client.push_message(userid, message)
     end
 
     friends = Friend.all
 
-    friends.each  do　|friend|
+    friends.each  do |friend|
 
-      if user.friend.friend_days = -1
-        userid = user.userId
+      if friend.friend_days == -1
+
         message = { type: 'text', text: "#{friend.name}さんの誕生日です。お祝いしましょう！" }
-
+        userid = user.userId
         client.push_message(userid, message)
       end
     end
@@ -42,8 +42,4 @@ def client
 
 
 
-  end
-
-end
-
-end
+    end
