@@ -19,30 +19,34 @@ def client
   # userid = "U7852d2b3ee71aa7c8d18a5c39ef885b2"
   users = User.all
     users.each do |user|
-    unless user.userId = nil
+
 
 
 
     if user.remained_days == -1
 userid = user.userId
-  message = { type: 'text', text: "お誕生日おめでとうございます！友達更新が可能です。" }
+  message = { type: 'text', text: "お誕生日おめでとうございます！友達更新が可能です。
+    https://salty-ridge-27900.herokuapp.com/" }
 
       client.push_message(userid, message)
     end
 
-    friends = Friend.all
+    friends = user.friends
 
     friends.each do |friend|
 
       if friend.friend_celebrate == -1
-        userid = "U7852d2b3ee71aa7c8d18a5c39ef885b2"
-        message = { type: 'text', text: "#{friend.friend_name}さんの誕生日です。お祝いしましょう！" }
+
+      userid = user.userId
+      message = { type: 'text', text: "#{friend.friend_name}さんの誕生日です。お祝いしましょう！" }
         client.push_message(userid, message)
         puts "aa"
+
+
       end
     end
 
 
-    end
+
 
 end

@@ -38,15 +38,11 @@ has_secure_password
 
 
     def friend_days
-        if friend_birthday.yday > Date.today.yday
-
-
-      return (friend_birthday.yday - Date.today.yday).to_i
-
-        else
-      return (friend_birthday.yday - Date.today.yday+365).to_i
-        end
-
+      if friend_birthday.yday - Date.today.yday >=-1
+      return (friend_birthday.yday- Date.today.yday+1).to_i
+      else
+      return (friend_birthday.yday- Date.today.yday+366).to_i
+      end
     end
 
 
