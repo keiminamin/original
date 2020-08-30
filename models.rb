@@ -49,4 +49,14 @@ has_secure_password
 
     end
 
+
+    def friend_celebrate
+
+      return (friend_birthday.yday- Date.today.yday).to_i
+
+      puts "ok"
+
+
+
+    end
   end
