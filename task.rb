@@ -21,10 +21,10 @@ def client
     users.each do |user|
     unless user.userId = nil
 
-      userid = user.userId
+
 
     if user.remained_days == -1
-
+userid = user.userId
   message = { type: 'text', text: "お誕生日おめでとうございます！友達更新が可能です。" }
 
       client.push_message(userid, message)
@@ -34,12 +34,11 @@ def client
 
     friends.each do |friend|
 
-      if friend.friend_celebrate == 0
-　　　　　puts "ok"
+      if friend.friend_celebrate == -1
+        userid = "U7852d2b3ee71aa7c8d18a5c39ef885b2"
         message = { type: 'text', text: "#{friend.friend_name}さんの誕生日です。お祝いしましょう！" }
-
         client.push_message(userid, message)
-
+        puts "aa"
       end
     end
 

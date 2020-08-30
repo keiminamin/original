@@ -54,7 +54,7 @@ has_secure_password
 
       return (friend_birthday.yday- Date.today.yday).to_i
 
-      puts "ok"
+
 
 
 
