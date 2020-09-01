@@ -4,12 +4,9 @@ require 'dotenv'
 
 def client
   @client ||= Line::Bot::Client.new { |config|
-    # config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
-    # config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
-    config.channel_secret = "353fd7fd5c7d7a00d583fa6b29e1ed4c
+    config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
+    config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
 
-"
-    config.channel_token = "NXf6DRp0cLoQEr0xhCkeaARJ4FKZof3sEdfNnQSNL/XDb12QGFrJ6H/rPOZZRPC8FX69N3LGXHLLaL8TXv59eYpLxocLe3SCsoYBAg6dtqAA2680UWkNtxi4csn5a79J04HCI9livgclVBnk2vmSPgdB04t89/1O/w1cDnyilFU="
   }
   end
 
