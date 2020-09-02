@@ -172,6 +172,7 @@ post '/:userid/confirm' do
     # redirect '/'
     # else
     #   redirect"/#{userid}/confirm "
+    erb :success
 
     else
 
