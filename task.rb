@@ -35,9 +35,9 @@ userid = user.userId
 
       if friend.friend_celebrate == -1
 
-      userid = user.userId
+      # userid = user.userId
       message = { type: 'text', text: "#{friend.friend_name}さんの誕生日です。お祝いしましょう！" }
-        client.push_message(userid, message)
+        client.push_message(user.userId, message)
         puts userid
 
 
