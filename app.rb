@@ -172,9 +172,14 @@ post '/:userid/confirm' do
     # redirect '/'
     # else
     #   redirect"/#{userid}/confirm "
+
+    else
+
+
+    redirect "/#{params[:userid]}/confirm"
     end
 
-  redirect "/#{params[:userid]}/confirm"
+
 
 end
 
