@@ -38,7 +38,7 @@ userid = user.userId
       userid = user.userId
       message = { type: 'text', text: "#{friend.friend_name}さんの誕生日です。お祝いしましょう！" }
         client.push_message(userid, message)
-        puts "aa"
+        puts userid
 
 
       end
