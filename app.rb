@@ -174,7 +174,7 @@ post '/:userid/confirm' do
     #   redirect"/#{userid}/confirm "
     end
 
-
+  redirect "/#{userid}/confirm"
 
 end
 
