@@ -7,7 +7,7 @@
   <h2 class="web_title">Everyday is Birthday</h2>
 <% if current_user.remained_days == -1 %>
 
-  <h2 class="log_title">Happy Birthday<%= User.find(session[:user]).mail%>さん</h2>
+  <h2 class="log_title">Happy Birthday <%= User.find(session[:user]).mail%>さん</h2>
 
   <% else %>
   <h2 class="log_title">ようこそ<%= User.find(session[:user]).mail%>さん</h2>
