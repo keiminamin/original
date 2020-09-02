@@ -203,9 +203,26 @@ tr {
     margin-top: 10vh;
 }
 
-.complete {
+.ok {
     text-align: center;
     font-family: 'Yanone Kaffeesatz',
         sans-serif;
+
+}
+
+.title4 {
+    margin: 10px;
+    margin-left: 40px;
+    color: #3D0814;
+    font-family: 'Yanone Kaffeesatz',
+        sans-serif;
+    font-size: 30px;
+}
+
+.ok {
+    color: #fafafafa;
+    font-family: 'Yanone Kaffeesatz',
+        sans-serif;
+    font-size: 30px;
 
 }
