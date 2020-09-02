@@ -223,10 +223,3 @@ tr {
         sans-serif;
     font-size: 30px;
 }
-
-.completes {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
