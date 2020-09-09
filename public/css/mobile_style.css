@@ -34,6 +34,11 @@ a:hover {
 
 }
 
+.titles {
+  width: 100vw;
+  display: flex;
+}
+
 .title {
 
   color: #3D0814;
