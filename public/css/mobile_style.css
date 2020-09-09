@@ -39,14 +39,16 @@ a:hover {
   color: #3D0814;
   font-family: 'Yanone Kaffeesatz',
     sans-serif;
-  text-align: center;
+  margin-left: 100vw;
 }
 
 
 .links {
-  display: flex;
-  justify-content: center;
-  margin-top: 10vh;
+  /* display: flex;
+  justify-content: center; */
 
+  margin-left: 100vw;
+  margin-top: 10vh;
+  margin-left: 100vw;
 
 }

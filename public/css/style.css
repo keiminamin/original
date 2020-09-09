@@ -223,3 +223,8 @@ tr {
         sans-serif;
     font-size: 30px;
 }
+
+.mobile_image {
+
+    display: none;
+}
