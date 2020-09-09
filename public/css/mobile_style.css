@@ -76,3 +76,34 @@ a:hover {
 
 
 }
+
+th {
+
+  padding: 10px;
+  width: 100vw;
+
+}
+
+td {
+
+  padding: 10px;
+  text-align: center;
+  color: #3D0814;
+  background-color: #FEEAFA;
+
+
+}
+
+tr {
+  background: #FEEAFA;
+}
+
+.log_title {
+  color: #FEEAFA;
+  font-family: 'M PLUS Rounded 1c',
+    sans-serif;
+
+  margin-left: 70vw;
+  font-size: 15px;
+  margin-top: 5vh;
+}
