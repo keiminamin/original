@@ -75,6 +75,7 @@ a:hover {
   height: 30vh;
 
 
+
 }
 
 th {
@@ -103,7 +104,32 @@ tr {
   font-family: 'M PLUS Rounded 1c',
     sans-serif;
 
-  margin-left: 70vw;
+
   font-size: 15px;
   margin-top: 5vh;
+}
+
+.log_link {
+  font-family: 'M PLUS Rounded 1c',
+    sans-serif;
+  color: #FEEAFA;
+}
+
+.log_links {
+  margin-top: 5vh;
+
+}
+
+.web_title {
+
+  float: left;
+  font-family: 'Yanone Kaffeesatz',
+    sans-serif;
+  margin-left: 3vw;
+  margin-top: 1vh;
+  font-size: 30px;
+}
+
+.namae {
+  font-size: 10px;
 }
