@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+body {
+
+  background-color: #EDCD82;
+
+}
+
+a {
+
+  text-decoration: none;
+  color: #503D3F;
+
+  transition: 0.3s;
+}
+
+a:hover {
+
+  border-bottom: solid 2px #3D0814;
+
+}
+
+.cake {
+  display: none;
+
+
+}
+
+.title {
+  font-size: 20px;
+  color: #3D0814;
+  font-family: 'Yanone Kaffeesatz',
+    sans-serif;
+  text-align: center;
+}
+
+
+.links {
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
+
+
+}
