@@ -24,6 +24,10 @@ a:hover {
 
 }
 
+.image {
+  display: none;
+}
+
 .cake {
   display: none;
 
