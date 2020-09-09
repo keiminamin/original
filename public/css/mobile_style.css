@@ -53,6 +53,8 @@ a:hover {
 
 
 .links {
+
+  width: 100vw;
   display: flex;
 
 
@@ -64,6 +66,7 @@ a:hover {
 
 .link {
   justify-content: center;
+
 }
 
 .cake_mobile {
