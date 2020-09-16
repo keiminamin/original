@@ -107,7 +107,7 @@ tr {
 
 
   font-size: 15px;
-
+  margin-left: 60vw;
   margin-top: 10vh;
 
 
@@ -134,8 +134,7 @@ tr {
   float: none;
   font-family: 'Yanone Kaffeesatz',
     sans-serif;
-  margin-left: 3vw;
-  margin-top: 1vh;
+
   font-size: 30px;
 }
 
