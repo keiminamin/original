@@ -110,12 +110,18 @@ tr {
 
   margin-top: 10vh;
 
+
+
+
+
 }
 
 .log_link {
   font-family: 'M PLUS Rounded 1c',
     sans-serif;
   color: #FEEAFA;
+
+  display: block;
 }
 
 .log_links {
@@ -125,7 +131,7 @@ tr {
 
 .web_title {
 
-  float: left;
+  float: none;
   font-family: 'Yanone Kaffeesatz',
     sans-serif;
   margin-left: 3vw;
