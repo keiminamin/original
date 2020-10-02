@@ -21,7 +21,7 @@ def client
 
 
 
-    if user.remained_days == -1
+    if user.remained_days == 0
 userid = user.userId
   message = { type: 'text', text: "お誕生日おめでとうございます！友達更新が可能です。
     https://salty-ridge-27900.herokuapp.com/" }
@@ -33,7 +33,7 @@ userid = user.userId
 
     friends.each do |friend|
 
-      if friend.friend_celebrate == -1
+      if friend.friend_celebrate == 0
 
       userid = user.userId
       message = { type: 'text', text: "#{friend.friend_name}さんの誕生日です。お祝いしましょう！" }

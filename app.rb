@@ -185,6 +185,8 @@ post '/:userid/confirm' do
 end
 
 
+
+
 get '/qr' do
 
   erb :qr
